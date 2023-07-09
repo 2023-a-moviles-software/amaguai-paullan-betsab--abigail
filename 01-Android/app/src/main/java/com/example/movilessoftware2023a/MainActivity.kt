@@ -1,11 +1,15 @@
 package com.example.movilessoftware2023a
 
+import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.ContactsContract
 import android.provider.ContactsContract.Contacts
+import android.util.Log
 import android.widget.Button
+import androidx.activity.result.contract.ActivityResultContracts
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,7 +24,7 @@ class MainActivity : AppCompatActivity() {
             if (result.resultCode === RESULT_OK){
                 if (result.data != null){
                     if (result.data!!.data != null){
-                        val uri: Uri = result.data!!.data!!
+                        val uri:Uri = result.data!!.data!!
                         val cursor = contentResolver.query(uri, null, null, null, null, null )
                         cursor?.moveToFirst()
                         val indiceTelefono = cursor?.getColumnIndex(
@@ -30,6 +34,20 @@ class MainActivity : AppCompatActivity() {
                         cursor?.close()
                         "Telefono ${telefono}"
                     }
+                }
+            }
+        }
+    val callbackContenidoIntentExplicito =
+        registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ){
+            result->
+            if(result.resultCode == Activity.RESULT_OK){
+                if(result.data != null){
+                    //Lógica de negocio
+                    val data = result.data
+                    //Nos devuelve este nombre modificado
+                    "${data?.getStringArrayExtra("nombreModificado")}"
                 }
             }
         }
@@ -73,5 +91,19 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, clase)
         startActivity(intent)
         //this.startActivity()
+    }
+    fun abrirActividadConParametros(
+        clase: Class<*>
+    ){
+        val intentExplicito = Intent(this, clase)
+        // Enviar parámetros
+        //Aceptamos primitivas
+        intentExplicito.putExtra("nombre", "Betsabe")
+        intentExplicito.putExtra("apellido", "Amaguai")
+        intentExplicito.putExtra("edad", 22)
+        //Enviamos el intent con RESPUESTA
+        //RECIBIMOS RESPUESTA
+        callbackContenidoIntentExplicito
+            .launch(intentExplicito)
     }
 }
