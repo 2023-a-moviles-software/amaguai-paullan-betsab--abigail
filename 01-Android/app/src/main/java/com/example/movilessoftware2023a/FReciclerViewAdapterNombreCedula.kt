@@ -22,7 +22,7 @@ class FReciclerViewAdapterNombreCedula (
             init {
                 nombreTextView = view.findViewById(R.id.tv_nombre)
                 cedulaTextView = view.findViewById(R.id.tv_cedula)
-                likesTextView = view.findViewById(R.id.tv_like)
+                likesTextView = view.findViewById(R.id.tv_likes)
                 accionBoton = view.findViewById(R.id.btn_dar_like)
                 accionBoton.setOnClickListener{ anadirLike() }
             }
