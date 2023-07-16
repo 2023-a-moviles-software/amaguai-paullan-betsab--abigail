@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ListaFrutas">
+    tools:context=".ListaNotas">
 
     <TextView
-        android:id="@+id/tv_nombreTiendaFrutas"
+        android:id="@+id/tv_nombreCategoriaNotas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Default"
@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.056" />
 
     <Button
-        android:id="@+id/btn_crearFruta"
+        android:id="@+id/btn_crearNota"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
         app:layout_constraintVertical_bias="0.14" />
 
     <ListView
-        android:id="@+id/lv_frutas"
+        android:id="@+id/lv_notas"
         android:layout_width="408dp"
         android:layout_height="563dp"
         app:layout_constraintBottom_toBottomOf="parent"

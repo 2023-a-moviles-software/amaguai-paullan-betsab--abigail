@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditarFruta">
+    tools:context=".EditarNota">
 
     <TextView
-        android:id="@+id/tv_nombreFrutaEdit"
+        android:id="@+id/tv_nombreNotaEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Default"
@@ -20,109 +20,107 @@
         app:layout_constraintVertical_bias="0.05" />
 
     <TextView
-        android:id="@+id/tv_nombreFrutaEdit2"
+        android:id="@+id/tv_nombreNotaEdit2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="48dp"
-        android:text="Nombre Fruta"
+        android:layout_marginTop="32dp"
+        android:text="nombreNota"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_nombreFrutaEdit" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_nombreNotaEdit" />
 
     <EditText
-        android:id="@+id/txt_nombreFrutaEdit"
+        android:id="@+id/txt_nombreNotaEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:ems="10"
         android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="@id/tv_nombreFrutaEdit2"
+        app:layout_constraintBottom_toBottomOf="@id/tv_nombreNotaEdit2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.076"
-        app:layout_constraintStart_toEndOf="@id/tv_nombreFrutaEdit2"
-        app:layout_constraintTop_toTopOf="@id/tv_nombreFrutaEdit2"
+        app:layout_constraintStart_toEndOf="@id/tv_nombreNotaEdit2"
+        app:layout_constraintTop_toTopOf="@id/tv_nombreNotaEdit2"
         app:layout_constraintVertical_bias="0.538" />
 
     <TextView
-        android:id="@+id/tv_precioFrutaEdit"
+        android:id="@+id/tv_prioridadNotaEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="48dp"
-        android:text="Precio"
+        android:text="Prioridad"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_nombreFrutaEdit2" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_nombreNotaEdit2" />
 
     <EditText
-        android:id="@+id/txt_precioFrutaEdit"
+        android:id="@+id/txt_numNotaEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="number|numberDecimal"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_precioFrutaEdit"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_numNotaEdit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.71"
-        app:layout_constraintStart_toEndOf="@+id/tv_precioFrutaEdit"
-        app:layout_constraintTop_toTopOf="@+id/tv_precioFrutaEdit"
-        app:layout_constraintVertical_bias="0.73" />
+        app:layout_constraintHorizontal_bias="0.396"
+        app:layout_constraintStart_toEndOf="@+id/tv_numNotaEdit"
+        app:layout_constraintTop_toTopOf="@+id/tv_numNotaEdit"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/tv_cantidadFrutaEdit"
+        android:id="@+id/tv_numNotaEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="48dp"
-        android:text="Cantidad"
+        android:text="Numero"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_precioFrutaEdit" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_prioridadNotaEdit" />
 
     <EditText
-        android:id="@+id/txt_cantidadFrutaEdit"
+        android:id="@+id/txt_prioridadNotaEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_cantidadFrutaEdit"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_prioridadNotaEdit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.027"
-        app:layout_constraintStart_toEndOf="@+id/tv_cantidadFrutaEdit"
-        app:layout_constraintTop_toTopOf="@+id/tv_cantidadFrutaEdit"
-        app:layout_constraintVertical_bias="0.76" />
+        app:layout_constraintStart_toEndOf="@+id/tv_prioridadNotaEdit"
+        app:layout_constraintTop_toTopOf="@+id/tv_prioridadNotaEdit" />
 
     <TextView
-        android:id="@+id/tv_familiaFrutaEdit"
+        android:id="@+id/tv_fechaNotaEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="48dp"
-        android:text="Familia Fruta"
+        android:text="Fecha"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_cantidadFrutaEdit" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_numNotaEdit" />
 
     <EditText
-        android:id="@+id/txt_familiaFrutaEdit"
+        android:id="@+id/txt_fechaNotaEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_familiaFrutaEdit"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_fechaNotaEdit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.562"
-        app:layout_constraintStart_toEndOf="@+id/tv_familiaFrutaEdit"
-        app:layout_constraintTop_toTopOf="@+id/tv_familiaFrutaEdit"
+        app:layout_constraintHorizontal_bias="0.611"
+        app:layout_constraintStart_toEndOf="@+id/tv_fechaNotaEdit"
+        app:layout_constraintTop_toTopOf="@+id/tv_fechaNotaEdit"
         app:layout_constraintVertical_bias="0.73" />
 
     <Button
-        android:id="@+id/btn_actualizarFruta"
+        android:id="@+id/btn_actualizarNota"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -130,5 +128,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_familiaFrutaEdit" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_fechaNotaEdit" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,10 +7,10 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/tv_tienda"
+        android:id="@+id/tv_categoria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tiendas"
+        android:text="Categorias"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,7 +33,7 @@
         app:layout_constraintVertical_bias="0.149" />
 
     <ListView
-        android:id="@+id/lv_tiendas"
+        android:id="@+id/lv_categorias"
         style="@style/Widget.AppCompat.ListView"
         android:layout_width="404dp"
         android:layout_height="562dp"

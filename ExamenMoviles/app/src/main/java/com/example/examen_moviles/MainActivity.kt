@@ -1,32 +1,29 @@
 package com.example.examen_moviles
 
-import android.app.Activity
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.ContextMenu
-import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
 
 class MainActivity : AppCompatActivity() {
-    var arreglo = BaseDatosEnMemoria.arregloTiendas
+    var arreglo = BaseDatosEnMemoria.arregloCategorias
     var idItemSeleccionado = 0
-    var adaptador : ArrayAdapter<Tienda>? = null
+    var adaptador : ArrayAdapter<Categoria>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         // adaptador (Iterables)
-        val listView = findViewById<ListView>(R.id.lv_tiendas)
+        val listView = findViewById<ListView>(R.id.lv_categorias)
         adaptador = ArrayAdapter(
             this, // contexto
             android.R.layout.simple_list_item_1, //layout.xml que se va a usar
@@ -35,9 +32,9 @@ class MainActivity : AppCompatActivity() {
         listView.adapter = adaptador
         registerForContextMenu(listView)
         adaptador!!.notifyDataSetChanged()
-        val botonNuevaTienda = findViewById<Button>(R.id.btn_crear)
-        botonNuevaTienda.setOnClickListener {
-            irActividad(NuevaTienda::class.java)
+        val botonNuevaCategoria= findViewById<Button>(R.id.btn_crear)
+        botonNuevaCategoria.setOnClickListener {
+            irActividad(NuevaCategoria::class.java)
             adaptador!!.notifyDataSetChanged()
         }
 
@@ -47,8 +44,8 @@ class MainActivity : AppCompatActivity() {
     override fun onContextItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.mi_editar -> {
-                intent = Intent(this,EditarTienda::class.java)
-                intent.putExtra("idTienda",idItemSeleccionado)
+                intent = Intent(this,EditarCategoria::class.java)
+                intent.putExtra("idCategoria",idItemSeleccionado)
                 startActivity(intent)
                 return true
             }
@@ -59,9 +56,9 @@ class MainActivity : AppCompatActivity() {
                 return false
             }
 
-            R.id.mi_verFrutas -> {
-                intent = Intent(this,ListaFrutas::class.java)
-                intent.putExtra("idTiendaListaFrutas",idItemSeleccionado)
+            R.id.mi_verNotas -> {
+                intent = Intent(this,ListaNotas::class.java)
+                intent.putExtra("idCategoriaListaNotas",idItemSeleccionado)
                 startActivity(intent)
                 return false
             }
@@ -106,7 +103,7 @@ class MainActivity : AppCompatActivity() {
         builder.setPositiveButton(
             "Aceptar",
             DialogInterface.OnClickListener { //Callback
-                    dialog, which -> eliminarTienda()
+                    dialog, which -> eliminarCategoria()
                 adaptador!!.notifyDataSetChanged()
             }
         )
@@ -115,7 +112,7 @@ class MainActivity : AppCompatActivity() {
         dialogo.show()
     }
 
-    fun eliminarTienda(){
+    fun eliminarCategoria(){
         arreglo.removeAt(idItemSeleccionado)
     }
 

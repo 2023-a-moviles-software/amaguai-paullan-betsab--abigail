@@ -2,13 +2,13 @@ package com.example.examen_moviles
 
 class BaseDatosEnMemoria {
     companion object {
-        val arregloTiendas = arrayListOf<Tienda>()
+        val arregloCategorias = arrayListOf<Categoria>()
         init {
-            val tienda1 = Tienda("TiendiTa","Quito","1724443294001",983359387,"Thomas Tapia")
-            tienda1.añadirFruta(Fruta("Pera",0.25,10,"Pera"))
-            arregloTiendas.add(tienda1)
-            arregloTiendas.add(Tienda("TiendaHoy","Quito","1712581329001",983359387,"Fabricio Boada"))
-            arregloTiendas.add(Tienda("TiendaMania","Quito","17125813254001",983359387,"Dorys Puenayan"))
+            val categoria1 = Categoria("Deportes","14/07/2023",5,"Bienestar")
+            categoria1.añadirNota(Notas("Rutina",1.0,2,"15/06/2023"))
+            arregloCategorias.add(categoria1)
+            arregloCategorias.add(Categoria("Salud","Control de peso",5,"Bienestar"))
+            arregloCategorias.add(Categoria("Comida","Menu de comida",2,"Bienestar"))
         }
     }
 }

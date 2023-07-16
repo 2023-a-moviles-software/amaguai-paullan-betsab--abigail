@@ -1,6 +1,5 @@
 package com.example.examen_moviles
 
-import android.app.Activity
 import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -13,35 +12,34 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
 import android.widget.TextView
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 
-class ListaFrutas : AppCompatActivity() {
-    var arreglo = BaseDatosEnMemoria.arregloTiendas
-    var adaptador : ArrayAdapter<Fruta>? = null
-    var idTienda : Int = 10
-    var arregloFrutas : ArrayList<Fruta>? = null
+class ListaNotas : AppCompatActivity() {
+    var arreglo = BaseDatosEnMemoria.arregloCategorias
+    var adaptador : ArrayAdapter<Notas>? = null
+    var idCategoria : Int = 10
+    var arregloNotas : ArrayList<Notas>? = null
     var idItemSeleccionado = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_lista_frutas)
+        setContentView(R.layout.activity_lista_notas)
         val objetoIntent : Intent = intent
-        idTienda = objetoIntent.getIntExtra("idTiendaListaFrutas",3)
-        val listView = findViewById<ListView>(R.id.lv_frutas)
-        arregloFrutas = arreglo.get(idTienda).frutas
+        idCategoria = objetoIntent.getIntExtra("idCategoriaListaNotas",3)
+        val listView = findViewById<ListView>(R.id.lv_notas)
+        arregloNotas = arreglo.get(idCategoria).notas
         adaptador = ArrayAdapter(
             this, // contexto
             android.R.layout.simple_list_item_1, //layout.xml que se va a usar
-            arregloFrutas!!
+            arregloNotas!!
         )
         listView.adapter = adaptador
         registerForContextMenu(listView)
-        findViewById<TextView>(R.id.tv_nombreTiendaFrutas).setText(arreglo.get(idTienda).nombreTienda)
-        var botonCrearFruta = findViewById<Button>(R.id.btn_crearFruta)
-        botonCrearFruta.setOnClickListener {
-            intent = Intent(this, CrearFruta::class.java )
-            intent.putExtra("idTiendaFruta", idTienda)
+        findViewById<TextView>(R.id.tv_nombreCategoriaNotas).setText(arreglo.get(idCategoria).nombreCategoria)
+        var botonCrearNota = findViewById<Button>(R.id.btn_crearNota)
+        botonCrearNota.setOnClickListener {
+            intent = Intent(this, CrearNota::class.java )
+            intent.putExtra("idCategoriaNota", idCategoria)
             startActivity(intent)
             adaptador!!.notifyDataSetChanged()
         }
@@ -56,7 +54,7 @@ class ListaFrutas : AppCompatActivity() {
         super.onCreateContextMenu(menu, v, menuInfo)
         //Llenar las opciones del menu
         val inflater = menuInflater
-        inflater.inflate(R.menu.menu_frutas, menu)
+        inflater.inflate(R.menu.menu_notas, menu)
         //obtener el id del ArrayList seleccionado
         val info = menuInfo as AdapterView.AdapterContextMenuInfo
         val id = info.position
@@ -65,15 +63,15 @@ class ListaFrutas : AppCompatActivity() {
 
     override fun onContextItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.mi_editarFruta -> {
-                intent = Intent(this,EditarFruta::class.java)
-                intent.putExtra("idTienda",idTienda)
-                intent.putExtra("idFruta",idItemSeleccionado)
+            R.id.mi_editarNota -> {
+                intent = Intent(this,EditarNota::class.java)
+                intent.putExtra("idCategoria",idCategoria)
+                intent.putExtra("idNota",idItemSeleccionado)
                 startActivity(intent)
                 return true
             }
 
-            R.id.mi_eliminarFruta -> {
+            R.id.mi_eliminarNota -> {
                 abrirDialogo()
                 "Hacer algo con ${idItemSeleccionado}"
                 return false
@@ -90,7 +88,7 @@ class ListaFrutas : AppCompatActivity() {
         builder.setPositiveButton(
             "Aceptar",
             DialogInterface.OnClickListener { //Callback
-                    dialog, which -> eliminarFruta()
+                    dialog, which -> eliminarNota()
                 adaptador!!.notifyDataSetChanged()
             }
         )
@@ -100,8 +98,8 @@ class ListaFrutas : AppCompatActivity() {
     }
 
 
-    fun eliminarFruta(){
-        arregloFrutas?.removeAt(idItemSeleccionado)
+    fun eliminarNota(){
+        arregloNotas?.removeAt(idItemSeleccionado)
     }
 
 
