@@ -26,7 +26,6 @@ class EditarCategoria : AppCompatActivity() {
         val botonActualizarCategoria = findViewById<Button>(R.id.btn_ActualizarTienda)
         botonActualizarCategoria.setOnClickListener {
             var nombreCategoriaAct = findViewById<EditText>(R.id.txt_nombreCategoriaEdit).text.toString()
-            var descripcionCategoriaAct = findViewById<EditText>(R.id.txt_fechaCategoriaEdit).text.toString()
             var fechaCreacionCategoriaAct = findViewById<EditText>(R.id.txt_fechaCategoriaEdit).text.toString()
             var prioridadCategoriaAct = Integer.parseInt(findViewById<EditText>(R.id.txt_prioridadCategoriaEdit).text.toString())
             var tipoCategoriaAct = findViewById<EditText>(R.id.txt_tipoCategoriaEdit).text.toString()

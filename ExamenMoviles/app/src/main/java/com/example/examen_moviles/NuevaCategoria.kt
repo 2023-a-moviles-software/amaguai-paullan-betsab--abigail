@@ -13,9 +13,9 @@ class NuevaCategoria : AppCompatActivity() {
         val botonCrearCategoria = findViewById<Button>(R.id.btn_crearCategoria)
         botonCrearCategoria.setOnClickListener {
             var nombreCategoria = (findViewById<EditText>(R.id.txt_nombreCategoria)).getText().toString()
-            var fechaCategoria= (findViewById<EditText>(R.id.txt_tipoCategoria)).getText().toString()
-            var prioridadCategoria = Integer.parseInt((findViewById<EditText>(R.id.txt_fechaCategoria)).getText().toString())
-            var tipoCategoria = (findViewById<EditText>(R.id.txt_prioridadCategoria)).getText().toString()
+            var fechaCategoria= (findViewById<EditText>(R.id.txt_fechaCategoria)).getText().toString()
+            var prioridadCategoria = Integer.parseInt((findViewById<EditText>(R.id.txt_prioridadCategoria)).getText().toString())
+            var tipoCategoria = (findViewById<EditText>(R.id.txt_tipoCategoria)).getText().toString()
 
             arreglo.add(Categoria(nombreCategoria,fechaCategoria,prioridadCategoria,tipoCategoria))
 
