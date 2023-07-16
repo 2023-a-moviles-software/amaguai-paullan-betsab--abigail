@@ -15,8 +15,24 @@
         android:theme="@style/Theme.ExamenMoviles"
         tools:targetApi="31">
         <activity
+            android:name=".ListaNotas"
+            android:exported="false"/>
+        <activity
+            android:name=".CrearNota"
+            android:exported="false"/>
+        <activity
+            android:name=".EditarCategoria"
+            android:exported="false"/>
+        <activity
+            android:name=".EditarNota"
+            android:exported="false"/>
+        <activity
+            android:name=".NuevaCategoria"
+            android:exported="false"/>
+        <activity
             android:name=".MainActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

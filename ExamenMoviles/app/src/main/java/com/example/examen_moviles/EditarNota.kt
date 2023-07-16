@@ -18,6 +18,7 @@ class EditarNota : AppCompatActivity() {
         val idNota = objetoIntent.getIntExtra("idNota",10)
 
         findViewById<TextView>(R.id.tv_nombreNotaEdit).setText(arreglo[idCategoria].notas[idNota].nombreNota)
+        findViewById<EditText>(R.id.txt_nombreNotaEdit).setText((arreglo[idCategoria].notas[idNota].nombreNota).toString())
         findViewById<EditText>(R.id.txt_prioridadNotaEdit).setText((arreglo[idCategoria].notas[idNota].numNota).toString())
         findViewById<EditText>(R.id.txt_numNotaEdit).setText((arreglo[idCategoria].notas[idNota].prioridadNota).toString())
         findViewById<EditText>(R.id.txt_fechaNotaEdit).setText(arreglo[idCategoria].notas[idNota].fechaNota)

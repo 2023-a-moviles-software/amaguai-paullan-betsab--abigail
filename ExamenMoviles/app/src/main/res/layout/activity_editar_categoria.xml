@@ -20,121 +20,98 @@
         app:layout_constraintVertical_bias="0.051" />
 
     <TextView
-        android:id="@+id/tv_nombreTiendaEditar"
+        android:id="@+id/tv_nombreCategoriaEditar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="48dp"
-        android:text="Nombre Tienda"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="56dp"
+        android:text="Nombre Categoria"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_tituloNombreTienda" />
 
     <EditText
-        android:id="@+id/txt_nombreTiendaEdit"
+        android:id="@+id/txt_nombreCategoriaEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:ems="10"
         android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="@id/tv_nombreTiendaEditar"
+        app:layout_constraintBottom_toBottomOf="@id/tv_nombreCategoriaEditar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.071"
-        app:layout_constraintStart_toEndOf="@id/tv_nombreTiendaEditar"
-        app:layout_constraintTop_toTopOf="@id/tv_nombreTiendaEditar"
-        app:layout_constraintVertical_bias="0.538" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/tv_nombreCategoriaEditar"
+        app:layout_constraintTop_toTopOf="@id/tv_nombreCategoriaEditar"
+        app:layout_constraintVertical_bias="0.653" />
 
     <TextView
-        android:id="@+id/tv_direccionEdit"
+        android:id="@+id/tv_fechaEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="48dp"
-        android:text="Direccion"
+        android:text="Fecha"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_nombreTiendaEditar" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_nombreCategoriaEditar" />
 
     <EditText
-        android:id="@+id/txt_direccionEdit"
+        android:id="@+id/txt_fechaCategoriaEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="76dp"
         android:ems="10"
         android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_direccionEdit"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_fechaEdit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/tv_direccionEdit"
-        app:layout_constraintTop_toTopOf="@+id/tv_direccionEdit"
-        app:layout_constraintVertical_bias="0.73" />
+        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintStart_toEndOf="@+id/tv_fechaEdit"
+        app:layout_constraintTop_toTopOf="@+id/tv_fechaEdit"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/tv_RUCEdit"
+        android:id="@+id/tv_prioridadEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="44dp"
-        android:text="RUC"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="76dp"
+        android:text="Prioridad Categoria"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_direccionEdit" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_fechaEdit" />
 
     <EditText
-        android:id="@+id/txt_RUCEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_RUCEdit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/tv_RUCEdit"
-        app:layout_constraintTop_toTopOf="@+id/tv_RUCEdit"
-        app:layout_constraintVertical_bias="0.73" />
-
-    <TextView
-        android:id="@+id/tv_telefonoEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="48dp"
-        android:text="Telefono"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_RUCEdit" />
-
-    <EditText
-        android:id="@+id/txt_telefonoEdit"
+        android:id="@+id/txt_prioridadCategoriaEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_telefonoEdit"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_prioridadEdit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.754"
-        app:layout_constraintStart_toEndOf="@+id/tv_telefonoEdit"
-        app:layout_constraintTop_toTopOf="@+id/tv_telefonoEdit" />
+        app:layout_constraintHorizontal_bias="0.589"
+        app:layout_constraintStart_toEndOf="@+id/tv_prioridadEdit"
+        app:layout_constraintTop_toTopOf="@+id/tv_prioridadEdit"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/tv_propietatioEdit"
+        android:id="@+id/tv_tipoCategoriaEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="44dp"
-        android:text="Propietario"
+        android:layout_marginTop="112dp"
+        android:text="Tipo Categoria"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_telefonoEdit" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_prioridadEdit" />
 
     <EditText
-        android:id="@+id/txt_propietarioEdit"
+        android:id="@+id/txt_tipoCategoriaEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_propietatioEdit"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_tipoCategoriaEdit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.728"
-        app:layout_constraintStart_toEndOf="@+id/tv_propietatioEdit"
-        app:layout_constraintTop_toTopOf="@+id/tv_propietatioEdit"
-        app:layout_constraintVertical_bias="0.461" />
+        app:layout_constraintHorizontal_bias="0.637"
+        app:layout_constraintStart_toEndOf="@+id/tv_tipoCategoriaEdit"
+        app:layout_constraintTop_toTopOf="@+id/tv_tipoCategoriaEdit"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/btn_ActualizarTienda"
@@ -144,7 +121,9 @@
         android:text="Actualizar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_propietatioEdit" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_tipoCategoriaEdit"
+        app:layout_constraintVertical_bias="0.545" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
