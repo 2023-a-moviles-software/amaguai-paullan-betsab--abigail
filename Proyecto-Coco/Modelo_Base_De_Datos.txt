@@ -1,0 +1,104 @@
+hotel{
+	id:string,
+	name:string,
+	img:string,
+	location:{
+		lat:number,
+		long:number,
+		main_street:string,
+		aux_street:string
+	},
+	rating:number,
+	reviews:number[],
+	promotions:{
+		title:string,
+		price:{
+			value:number
+			currency:string
+		},
+		description:string
+	}
+}
+	
+	restaurant{
+
+	id:string
+	name:string
+	img:string
+	location:{
+		lat:number,
+		long:number,
+		main_street:string,
+		aux_street:string
+	},
+	rating:number,
+	reviews:number[],
+	menu:any
+	promotions:{
+		title:string,
+		price:{
+			value:number
+			currency:string
+		},
+		description:string
+	}
+}
+
+	stores{
+	id:string,
+	name:string,
+	img:string,
+	location:{
+		lat:number,
+		long:number,
+		main_street:string,
+		aux_street:string
+	},
+	rating:number,
+	reviews:number[],
+	product_types:string[]
+}
+
+	guides{
+	id:string,
+	name:string,
+	img:string,
+	fee:{
+		value:number
+		currency:string
+	}
+	disponibility:{
+		day:string
+		hour_start:number
+		hour_end:number
+		
+	}[],
+	contacts:{
+		type:string
+		value:string
+	}[]
+
+}
+
+
+	review{
+	id:string
+	bussinessId:string
+	userId:string
+	time:string
+	device:string
+	service:string
+	message:string
+}
+
+	customer{
+	id:string,
+	first_name:string,
+	last_name:string,
+	birthdate:string,
+	interests:[],
+	last_known_location:{
+		lat:number,
+		long:number
+	}
+}
