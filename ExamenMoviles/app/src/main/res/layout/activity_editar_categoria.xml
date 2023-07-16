@@ -85,16 +85,16 @@
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="@+id/tv_prioridadEdit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.589"
+        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toEndOf="@+id/tv_prioridadEdit"
         app:layout_constraintTop_toTopOf="@+id/tv_prioridadEdit"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.384" />
 
     <TextView
         android:id="@+id/tv_tipoCategoriaEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="112dp"
         android:text="Tipo Categoria"
         app:layout_constraintStart_toStartOf="parent"
@@ -108,7 +108,7 @@
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="@+id/tv_tipoCategoriaEdit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.637"
+        app:layout_constraintHorizontal_bias="0.623"
         app:layout_constraintStart_toEndOf="@+id/tv_tipoCategoriaEdit"
         app:layout_constraintTop_toTopOf="@+id/tv_tipoCategoriaEdit"
         app:layout_constraintVertical_bias="1.0" />
