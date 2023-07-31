@@ -54,4 +54,5 @@
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
     <string name="title_activity_aaciclo_vida">AACicloVida</string>
+    <string name="title_activity_google_maps_inicio">GoogleMapsInicio</string>
 </resources>
