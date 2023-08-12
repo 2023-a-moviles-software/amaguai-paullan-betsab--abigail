@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         //Base de datos SQLite
-        EBaseDatos.tablaEntrenador = ESqliteHelperEntrenador(this)
+        EBaseDeDatos.tablaEntrenador = ESqLiteHelperEntrenador(this)
 
         val botonCicloVida = findViewById<Button>(
             R.id.btn_ciclo_vida
@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
             R.id.btn_ir_list_view
         )
         botonListView.setOnClickListener{
-            irActividad(BListView::class.java)
+            irActividad(BlistView::class.java)
         }
 
         val botonIntentImplicito = findViewById<Button>(
@@ -121,8 +121,8 @@ class MainActivity : AppCompatActivity() {
         val intentExplicito = Intent(this, clase)
         //Enviar Parametros
         // Aceptamos primitivos
-        intentExplicito.putExtra("nombre", "Thomas")
-        intentExplicito.putExtra("apellido", "Tapia")
+        intentExplicito.putExtra("nombre", "Betsabe")
+        intentExplicito.putExtra("apellido", "Amaguai")
         intentExplicito.putExtra("edad", 22)
         //enviamos el intent con RESPUESTA
         // RECIBIMOS RESPUESTA

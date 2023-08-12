@@ -19,6 +19,7 @@ class GoogleMapsInicio : AppCompatActivity(), OnMapReadyCallback {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
         binding = ActivityGoogleMapsInicioBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

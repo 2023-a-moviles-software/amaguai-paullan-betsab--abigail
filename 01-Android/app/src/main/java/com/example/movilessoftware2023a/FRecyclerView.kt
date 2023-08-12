@@ -6,22 +6,20 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class FRecyclerView : AppCompatActivity() {
-    var totalLikes = 0
+    //2 componentes 2 likes , se sumaran y se mostraran en la actividad principal
+    var totalLikes =0
     val arreglo = BBaseDatosMemoria.arregloBEntrenador
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_frecycler_view)
         //Definir lista
         inicializarRecyclerView()
-
-
     }
-
     fun inicializarRecyclerView(){
         val recyclerView = findViewById<RecyclerView>(
             R.id.rv_entrenadores
         )
-        val adaptador = FReciclerViewAdaptadorNombreCedula(
+        val adaptador = FReciclerViewAdapterNombreCedula(
             this,
             arreglo,
             recyclerView
@@ -36,7 +34,9 @@ class FRecyclerView : AppCompatActivity() {
 
     fun aumentarTotalLikes(){
         totalLikes = totalLikes + 1
-        val totalLikesTextView = findViewById<TextView>(R.id.tv_total_likes)
+        val totalLikesTextView = findViewById<TextView>(
+            R.id.tv_total_likes
+        )
         totalLikesTextView.text = totalLikes.toString()
     }
 }

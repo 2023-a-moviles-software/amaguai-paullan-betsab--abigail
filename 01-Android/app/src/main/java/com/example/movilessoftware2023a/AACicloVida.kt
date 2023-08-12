@@ -16,12 +16,15 @@ class AACicloVida : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityAacicloVidaBinding
+    //Propiedad nueva de texto global
     var textoGlobal = ""
 
-    fun mostrarSnackbar(texto : String){
+    fun mostrarSnackbar(texto: String){
         textoGlobal += texto
         Snackbar.make(
-            findViewById(R.id.cl_ciclo_vida),textoGlobal,Snackbar.LENGTH_LONG
+            findViewById(R.id.cl_ciclo_vida),
+            textoGlobal,
+            Snackbar.LENGTH_LONG
         )
             .setAction("Action", null).show()
     }
@@ -44,52 +47,50 @@ class AACicloVida : AppCompatActivity() {
                 .setAnchorView(R.id.fab)
                 .setAction("Action", null).show()
         }
+        //Parte del ciclo de vida de las actividades
         mostrarSnackbar("onCreate")
     }
 
-    override fun onStart() {
+    override fun onStart(){
         super.onStart()
-        mostrarSnackbar("OnStart")
+        mostrarSnackbar("onStart")
     }
 
-    override fun onResume() {
+    override fun onResume(){
         super.onResume()
-        mostrarSnackbar("OnResume")
+        mostrarSnackbar("onResume")
     }
 
-    override fun onPause(){
+    override fun onRestart(){
+        super.onRestart()
+        mostrarSnackbar("onRestart")
+    }
+    override fun onPause() {
         super.onPause()
         mostrarSnackbar("onPause")
     }
-
-    override fun onStop() {
+    override fun onStop(){
         super.onStop()
-        mostrarSnackbar("OnStop")
+        mostrarSnackbar("onStop")
     }
-
     override fun onDestroy() {
         super.onDestroy()
-        mostrarSnackbar("OnDestroy")
-    }
-
-    override fun onRestart() {
-        super.onRestart()
-        mostrarSnackbar("OnRestart")
+        mostrarSnackbar("onDestroy")
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
-        outState.run{
-            //GUARDAR LAS VARIABLES
-            //PRIMITIVAS
-            putString("variableTextoGuardado",textoGlobal)
+        super.onSaveInstanceState(outState)
+        outState.run {
+            //Guardar las variables
+            //Primitivas
+            putString("variableTextoGuardado", textoGlobal)
+
         }
         super.onSaveInstanceState(outState)
     }
 
-    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+    override fun onRestoreInstanceState(savedInstanceState: Bundle){
         super.onRestoreInstanceState(savedInstanceState)
-        //RECUPERAR VARIABLES
-        //PRIMITIVAS
         val textoRecuperado: String? = savedInstanceState.getString("variableTextoGuardado")
         if (textoRecuperado != null){
             mostrarSnackbar(textoRecuperado)
