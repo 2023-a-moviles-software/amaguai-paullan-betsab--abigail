@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="texto">Port en</string>
+    <string name="bienvenida">Wellcome PORT</string>
 </resources>

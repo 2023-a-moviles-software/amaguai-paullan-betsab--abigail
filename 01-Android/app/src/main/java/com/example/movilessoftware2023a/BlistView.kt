@@ -12,41 +12,43 @@ import android.widget.Button
 import android.widget.ListView
 import androidx.appcompat.app.AlertDialog
 
-class BlistView : AppCompatActivity() {
+class BListView : AppCompatActivity() {
     val arreglo = BBaseDatosMemoria.arregloBEntrenador
     var idItemSeleccionado = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_blist_view)
-        //adapatador
+        // adaptador (Iterables)
         val listView = findViewById<ListView>(R.id.lv_list_view)
-        var adaptador = ArrayAdapter(
-            this, //Contexto
-            android.R.layout.simple_list_item_1, //Layout .xml que se usara
+        val adaptador = ArrayAdapter(
+            this, // contexto
+            android.R.layout.simple_list_item_1, //layout.xml que se va a usar
             arreglo
         )
         listView.adapter = adaptador
         adaptador.notifyDataSetChanged()
-        val botonAnadirListView = findViewById<Button>(R.id.btn_anadir_list_view)
-        botonAnadirListView.setOnClickListener {
+        val botonaAnadirListView = findViewById<Button>(R.id.btn_anadir_list_view)
+        botonaAnadirListView.setOnClickListener {
             anadirEntrenador(adaptador)
         }
         registerForContextMenu(listView)
     }
 
-    //Funcion que ya existe-> CUnado el usuario lececcione una de las dos opciones que creamos
-
     override fun onContextItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.mi_editar -> {
+                "Hacer algo con ${idItemSeleccionado}"
                 return true
             }
 
             R.id.mi_eliminar -> {
-                return true
+                abrirDialogo()
+                "Hacer algo con ${idItemSeleccionado}"
+                return false
             }
 
             else -> super.onContextItemSelected(item)
+
         }
     }
 
@@ -59,56 +61,49 @@ class BlistView : AppCompatActivity() {
         //Llenar las opciones del menu
         val inflater = menuInflater
         inflater.inflate(R.menu.menu, menu)
-        //Obtener el Id del ArrauList seleccionado
+        //obtener el id del ArrayList seleccionado
         val info = menuInfo as AdapterView.AdapterContextMenuInfo
         val id = info.position
-        //Del item presionado el identificador, se la guarda
-        idItemSeleccionado = 0
-
+        idItemSeleccionado = id
     }
 
-    //Funcion
     fun anadirEntrenador(
-        //Recibe
         adaptador: ArrayAdapter<BEntrenador>
-    ) {
+    ){
         arreglo.add(
-            BEntrenador(4, "Betsabe", "Descipcion")
+            BEntrenador(4, "Dorys", "d@d.com")
         )
         adaptador.notifyDataSetChanged()
     }
 
-
-    //Abrir Dialogo
-    fun abrirDialogo() {
+    fun abrirDialogo(){
         val builder = AlertDialog.Builder(this)
-        builder.setTitle("Desea eliminar?")
+        builder.setTitle("Desea Eliminar")
         builder.setPositiveButton(
             "Aceptar",
-            DialogInterface.OnClickListener { //CallBack
-                    dialog, which -> //Alguna cosa
+            DialogInterface.OnClickListener{ //Callback
+                dialog, which -> //Alguna cosa
             }
         )
         builder.setNegativeButton("Cancelar", null)
-
         val opciones = resources.getStringArray(
             R.array.string_array_opciones_dialogo
         )
         val seleccionPrevia = booleanArrayOf(
             true, //Lunes seleccionado
             false, //Martes NO seleccionado
-            false, //Miercoles NO seleccionado
+            false //Miercoles NO seleccionado
         )
 
         builder.setMultiChoiceItems(
             opciones,
             seleccionPrevia,
             {
-                dialog, which, isChecker ->
-                "Dio clic en el item ${which}"
+             dialog, which, isChecked ->
+             "Dio clic en ele item ${which}"
             }
         )
-        val dialogo = builder.create()
+        val dialogo= builder.create()
         dialogo.show()
     }
 }
