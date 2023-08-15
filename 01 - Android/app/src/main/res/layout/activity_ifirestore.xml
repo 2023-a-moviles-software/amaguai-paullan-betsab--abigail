@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IFirestore">
+
+
+    <Button
+        android:id="@+id/btn_fs_datos_prueba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C.DATOS"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="78dp" />
+
+    <Button
+        android:id="@+id/btn_fs_order_by"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ORDER BY"
+        tools:layout_editor_absoluteX="164dp"
+        tools:layout_editor_absoluteY="78dp" />
+
+    <Button
+        android:id="@+id/btn_fs_odoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="O. DOC"
+        tools:layout_editor_absoluteX="289dp"
+        tools:layout_editor_absoluteY="78dp" />
+
+    <Button
+        android:id="@+id/btn_fs_ind_comp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="IN. COMP"
+        app:layout_constraintEnd_toEndOf="@+id/btn_fs_datos_prueba"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btn_fs_datos_prueba"
+        app:layout_constraintTop_toBottomOf="@+id/btn_fs_datos_prueba" />
+
+    <Button
+        android:id="@+id/btn_fs_crear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="CREAR"
+        app:layout_constraintEnd_toEndOf="@+id/btn_fs_order_by"
+        app:layout_constraintHorizontal_bias="0.631"
+        app:layout_constraintStart_toStartOf="@+id/btn_fs_order_by"
+        app:layout_constraintTop_toBottomOf="@+id/btn_fs_order_by" />
+
+    <Button
+        android:id="@+id/btn_fs_eliminar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="ELIMINAR"
+        app:layout_constraintEnd_toEndOf="@+id/btn_fs_odoc"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btn_fs_odoc"
+        app:layout_constraintTop_toBottomOf="@+id/btn_fs_odoc" />
+
+    <Button
+        android:id="@+id/btn_fs_epaginar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="E. PAGINAR"
+        app:layout_constraintEnd_toEndOf="@+id/btn_fs_ind_comp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btn_fs_ind_comp"
+        app:layout_constraintTop_toBottomOf="@+id/btn_fs_ind_comp" />
+
+    <Button
+        android:id="@+id/btn_fs_paginar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="PAGINAR"
+        app:layout_constraintEnd_toEndOf="@+id/btn_fs_crear"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btn_fs_crear"
+        app:layout_constraintTop_toBottomOf="@+id/btn_fs_crear" />
+
+    <ListView
+        android:id="@+id/lv_firestore"
+        android:layout_width="286dp"
+        android:layout_height="232dp"
+        android:layout_marginTop="236dp"
+        app:layout_constraintEnd_toEndOf="@+id/btn_fs_odoc"
+        app:layout_constraintHorizontal_bias="0.647"
+        app:layout_constraintStart_toStartOf="@+id/btn_fs_datos_prueba"
+        app:layout_constraintTop_toBottomOf="@+id/btn_fs_order_by" />
+</androidx.constraintlayout.widget.ConstraintLayout>
